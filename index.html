@@ -14,6 +14,9 @@
     <!-- Visualization & Content Choices: Core Numbers -> Styled Cards (Inform). Birth Chart -> Interactive HTML Grid (Organize/Inform). Life Pinnacles -> Interactive Timeline & Chart.js Line Chart (Change/Compare). Spiritual Path -> Accordion/Tabs (Organize). All interactions (clicks) trigger dynamic content updates via JavaScript, pulling data from structured JS objects. This approach makes the data explorable and visually represents the journey. Confirmed NO SVG/Mermaid used. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Quicksand', sans-serif;
             background-color: #FDFBF8;
@@ -94,12 +97,32 @@
                         <a href="#hanh-trinh" class="nav-link text-gray-600 font-medium px-1 py-2 text-sm">Hành Trình Cuộc Đời</a>
                         <a href="#tu-tap" class="nav-link text-gray-600 font-medium px-1 py-2 text-sm">Lộ Trình Tu Tập</a>
                     </nav>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-[#C0A080] hover:bg-gray-100 focus:outline-none">
+                            <span class="sr-only">Mở menu chính</span>
+                            <svg id="icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="icon-close" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#tong-quan" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#C0A080] hover:bg-gray-50">Tổng Quan</a>
+                    <a href="#ban-do-nang-luong" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#C0A080] hover:bg-gray-50">Bản Đồ Năng Lượng</a>
+                    <a href="#su-menh" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#C0A080] hover:bg-gray-50">Sứ Mệnh & Nội Tâm</a>
+                    <a href="#hanh-trinh" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#C0A080] hover:bg-gray-50">Hành Trình Cuộc Đời</a>
+                    <a href="#tu-tap" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#C0A080] hover:bg-gray-50">Lộ Trình Tu Tập</a>
                 </div>
             </div>
         </header>
 
         <main class="container mx-auto p-4 sm:p-6 lg:p-8">
-            <section id="tong-quan" class="content-section">
+            <section id="tong-quan" class="content-section pt-16 -mt-16">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-[#4A4A4A] tracking-tight">Chào mừng Chị đến với Hành Trình Khám Phá Bản Thân</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Đây là không gian tương tác, nơi các con số trong Thần số học và lời dạy của Đức Phật giao thoa, soi chiếu con đường tỉnh thức dành riêng cho chị.</p>
@@ -136,7 +159,7 @@
                 </div>
             </section>
 
-            <section id="ban-do-nang-luong" class="content-section hidden mt-16">
+            <section id="ban-do-nang-luong" class="content-section pt-16 -mt-16">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-[#4A4A4A] tracking-tight">Bản Đồ Năng Lượng Nội Tâm</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Khám phá những năng lượng sẵn có và các bài học cần vun bồi qua Biểu đồ ngày sinh 29/05/1985. Hãy nhấp vào từng ô số để tìm hiểu sâu hơn.</p>
@@ -168,7 +191,7 @@
                 </div>
             </section>
             
-            <section id="su-menh" class="content-section hidden mt-16">
+            <section id="su-menh" class="content-section pt-16 -mt-16">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-[#4A4A4A] tracking-tight">Sứ Mệnh, Nội Tâm & Biểu Hiện</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Các chỉ số từ họ tên "Bùi Lê Thị Hải Bình" tiết lộ mục đích sống, khát khao sâu thẳm và cách chị tương tác với thế giới.</p>
@@ -191,7 +214,7 @@
                 </div>
             </section>
 
-            <section id="hanh-trinh" class="content-section hidden mt-16">
+            <section id="hanh-trinh" class="content-section pt-16 -mt-16">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-[#4A4A4A] tracking-tight">Hành Trình Cuộc Đời</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Cuộc đời được chia thành các giai đoạn, mỗi giai đoạn mang một bài học và cơ hội riêng. Hãy khám phá các cột mốc quan trọng trên hành trình của chị.</p>
@@ -239,7 +262,7 @@
                 </div>
             </section>
 
-            <section id="tu-tap" class="content-section hidden mt-16">
+            <section id="tu-tap" class="content-section pt-16 -mt-16">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-[#4A4A4A] tracking-tight">Lộ Trình Tu Tập Cá Nhân Hóa</h2>
                     <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Con đường chuyển hóa được thiết kế dành riêng cho chị, dựa trên sự kết hợp giữa Thần số học và con đường Tam Vô Lậu Học: Giới - Định - Tuệ.</p>
@@ -284,58 +307,57 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const numerologyData = {
-                birthChart: {
-                    '1': { title: 'Số 1: Cái Tôi & Sự Biểu Đạt', content: 'Có một số 1 cho thấy chị có nội tâm phong phú, nhưng đôi khi gặp khó khăn trong việc bộc lộ cảm xúc. Chị cần nỗ lực có ý thức để thể hiện bản thân.' },
-                    '2': { title: 'Số 2: Trực Giác & Sự Nhạy Cảm', content: 'Sự hiện diện của số 2 cho thấy chị có khả năng thấu cảm và trực giác. Tuy nhiên, cần phát triển thêm để trở nên tinh tế hơn.' },
-                    '3': { title: 'Bài học số 3: Biểu Đạt Linh Hoạt', content: 'Đây là bài học về việc thực hành Chánh Tư Duy và Chánh Ngữ. Chị cần nỗ lực học hỏi giáo lý, tư duy sâu sắc và thực hành ái ngữ để kích hoạt năng lượng này.' },
-                    '4': { title: 'Bài học số 4: Kỷ Luật & Nền Tảng', content: 'Đây là bài học về Giới (Sīla). Phương pháp để điền số 4 ảo chính là thực hành và giữ gìn Ngũ giới một cách nghiêm túc, tạo ra một nền tảng đạo đức vững chắc.' },
-                    '5': { title: 'Số 5: Tự Do & Tình Yêu Thương', content: 'Việc có đến hai số 5 cho thấy một nhu cầu rất lớn về sự tự do biểu đạt, khát khao được kết nối và lan tỏa tình yêu thương. Điều này cũng mang lại sự linh hoạt và khả năng thích ứng cao.' },
-                    '6': { title: 'Bài học số 6: Trách Nhiệm Gia Đình', content: 'Đây là bài học thực hành Tâm Từ (Mettā) một cách cụ thể trong đời sống hàng ngày. Chị cần vun bồi sự kiên nhẫn, bao dung và chăm sóc cho những người thân yêu.' },
-                    '7': { title: 'Bài học số 7: Chiêm Nghiệm Nội Tâm', content: 'Đây là bài học về Định (Samādhi) và Tuệ (Paññā). Chị cần tạo không gian để thực hành thiền định, quán chiếu về giáo pháp và học hỏi từ chính những trải nghiệm của mình.' },
-                    '8': { title: 'Số 8: Độc Lập & Trí Tuệ', content: 'Sự hiện diện của số 8 cho thấy chị có khả năng tổ chức, sắp xếp công việc một cách tỉ mỉ và có một tinh thần độc lập, mạnh mẽ.' },
-                    '9': { title: 'Số 9: Hoài Bão & Lòng Vị Tha', content: 'Việc có đến hai số 9 cho thấy lý tưởng sống, hoài bão phụng sự và lòng vị tha của chị được nhân lên gấp đôi. Chị có một trách nhiệm tự nhiên đối với cộng đồng.' },
-                },
-                pinnacles: {
-                    '2018': { title: 'Đỉnh cao 1 (33-42 tuổi): Năng lượng số 7', content: 'Đây là thời gian vàng cho việc tu tập chiều sâu. Năng lượng số 7 thôi thúc chị học hỏi, tìm kiếm sự thật và tự mình trải nghiệm để đúc kết bài học. Con đường này có thể đi kèm thử thách, đòi hỏi sự hy sinh để đổi lấy trưởng thành tâm hồn. Thử thách chính trong giai đoạn này là số 3: học cách biểu đạt bản thân một cách tích cực và chân thật.' },
-                    '2027': { title: 'Đỉnh cao 2 (42-51 tuổi): Năng lượng số 7', content: 'Năng lượng học hỏi và chiêm nghiệm tiếp tục được củng cố. Sau giai đoạn trải nghiệm, đây là lúc chị bắt đầu chia sẻ lại những gì mình đã học được. Trí tuệ sẽ đạt độ chín. Thử thách của chị vẫn là số 3: tiếp tục hoàn thiện Chánh Ngữ và Chánh Tư Duy.' },
-                    '2036': { title: 'Đỉnh cao 3 (51-60 tuổi): Năng lượng số 5', content: 'Giai đoạn của sự tự do, thay đổi và kết nối. Sau thời gian tu tập chiều sâu, đây là lúc chị mang những hiểu biết của mình ra để lan tỏa, kết nối với nhiều người hơn. Thử thách số 0 cho thấy sự tự do lựa chọn, khi đã vượt qua bài học số 3, con đường sẽ rộng mở.' },
-                    '2045': { title: 'Đỉnh cao 4 (60-69 tuổi): Năng lượng số 1', content: 'Đây là giai đoạn của sự khởi đầu mới, sự độc lập và khẳng định bản thân ở một tầm nhận thức mới. Chị sẽ đứng vững trên con đường của mình, trở thành một ngọn đuốc soi sáng cho người khác. Thử thách số 0 tiếp tục mang lại sự tự do và ít chướng ngại.' },
-                }
+                birthChart: { '1': { title: 'Số 1: Cái Tôi & Sự Biểu Đạt', content: 'Có một số 1 cho thấy chị có nội tâm phong phú, nhưng đôi khi gặp khó khăn trong việc bộc lộ cảm xúc. Chị cần nỗ lực có ý thức để thể hiện bản thân.' }, '2': { title: 'Số 2: Trực Giác & Sự Nhạy Cảm', content: 'Sự hiện diện của số 2 cho thấy chị có khả năng thấu cảm và trực giác. Tuy nhiên, cần phát triển thêm để trở nên tinh tế hơn.' }, '3': { title: 'Bài học số 3: Biểu Đạt Linh Hoạt', content: 'Đây là bài học về việc thực hành Chánh Tư Duy và Chánh Ngữ. Chị cần nỗ lực học hỏi giáo lý, tư duy sâu sắc và thực hành ái ngữ để kích hoạt năng lượng này.' }, '4': { title: 'Bài học số 4: Kỷ Luật & Nền Tảng', content: 'Đây là bài học về Giới (Sīla). Phương pháp để điền số 4 ảo chính là thực hành và giữ gìn Ngũ giới một cách nghiêm túc, tạo ra một nền tảng đạo đức vững chắc.' }, '5': { title: 'Số 5: Tự Do & Tình Yêu Thương', content: 'Việc có đến hai số 5 cho thấy một nhu cầu rất lớn về sự tự do biểu đạt, khát khao được kết nối và lan tỏa tình yêu thương. Điều này cũng mang lại sự linh hoạt và khả năng thích ứng cao.' }, '6': { title: 'Bài học số 6: Trách Nhiệm Gia Đình', content: 'Đây là bài học thực hành Tâm Từ (Mettā) một cách cụ thể trong đời sống hàng ngày. Chị cần vun bồi sự kiên nhẫn, bao dung và chăm sóc cho những người thân yêu.' }, '7': { title: 'Bài học số 7: Chiêm Nghiệm Nội Tâm', content: 'Đây là bài học về Định (Samādhi) và Tuệ (Paññā). Chị cần tạo không gian để thực hành thiền định, quán chiếu về giáo pháp và học hỏi từ chính những trải nghiệm của mình.' }, '8': { title: 'Số 8: Độc Lập & Trí Tuệ', content: 'Sự hiện diện của số 8 cho thấy chị có khả năng tổ chức, sắp xếp công việc một cách tỉ mỉ và có một tinh thần độc lập, mạnh mẽ.' }, '9': { title: 'Số 9: Hoài Bão & Lòng Vị Tha', content: 'Việc có đến hai số 9 cho thấy lý tưởng sống, hoài bão phụng sự và lòng vị tha của chị được nhân lên gấp đôi. Chị có một trách nhiệm tự nhiên đối với cộng đồng.' }, },
+                pinnacles: { '2018': { title: 'Đỉnh cao 1 (33-42 tuổi): Năng lượng số 7', content: 'Đây là thời gian vàng cho việc tu tập chiều sâu. Năng lượng số 7 thôi thúc chị học hỏi, tìm kiếm sự thật và tự mình trải nghiệm để đúc kết bài học. Con đường này có thể đi kèm thử thách, đòi hỏi sự hy sinh để đổi lấy trưởng thành tâm hồn. Thử thách chính trong giai đoạn này là số 3: học cách biểu đạt bản thân một cách tích cực và chân thật.' }, '2027': { title: 'Đỉnh cao 2 (42-51 tuổi): Năng lượng số 7', content: 'Năng lượng học hỏi và chiêm nghiệm tiếp tục được củng cố. Sau giai đoạn trải nghiệm, đây là lúc chị bắt đầu chia sẻ lại những gì mình đã học được. Trí tuệ sẽ đạt độ chín. Thử thách của chị vẫn là số 3: tiếp tục hoàn thiện Chánh Ngữ và Chánh Tư Duy.' }, '2036': { title: 'Đỉnh cao 3 (51-60 tuổi): Năng lượng số 5', content: 'Giai đoạn của sự tự do, thay đổi và kết nối. Sau thời gian tu tập chiều sâu, đây là lúc chị mang những hiểu biết của mình ra để lan tỏa, kết nối với nhiều người hơn. Thử thách số 0 cho thấy sự tự do lựa chọn, khi đã vượt qua bài học số 3, con đường sẽ rộng mở.' }, '2045': { title: 'Đỉnh cao 4 (60-69 tuổi): Năng lượng số 1', content: 'Đây là giai đoạn của sự khởi đầu mới, sự độc lập và khẳng định bản thân ở một tầm nhận thức mới. Chị sẽ đứng vững trên con đường của mình, trở thành một ngọn đuốc soi sáng cho người khác. Thử thách số 0 tiếp tục mang lại sự tự do và ít chướng ngại.' }, }
             };
 
             const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             const sections = document.querySelectorAll('.content-section');
-
-            function updateActiveSection() {
-                let currentSection = 'tong-quan';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (window.scrollY >= sectionTop - 80) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.toggle('active', link.hash === '#' + currentSection);
-                });
+            
+            function navigateToSection(targetId) {
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    sections.forEach(s => s.style.display = 'none');
+                    targetSection.style.display = 'block';
+                    
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    document.querySelector(`.nav-link[href="${targetId}"]`).classList.add('active');
+                    
+                    window.scrollTo({ top: targetSection.offsetTop - 64, behavior: 'smooth' });
+                }
             }
 
-            navLinks.forEach(link => {
+            [...navLinks, ...mobileNavLinks].forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    sections.forEach(s => s.classList.add('hidden'));
-                    targetSection.classList.remove('hidden');
-
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
+                    navigateToSection(targetId);
                 });
             });
-            
+
+            sections.forEach(s => s.style.display = 'none');
+            document.querySelector('#tong-quan').style.display = 'block';
             document.querySelector('.nav-link[href="#tong-quan"]').classList.add('active');
-            document.querySelector('#tong-quan').classList.remove('hidden');
+            
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    iconOpen.classList.remove('hidden');
+                    iconClose.classList.add('hidden');
+                });
+            });
 
             const birthGridCells = document.querySelectorAll('.birth-grid-cell');
             const infoTitle = document.getElementById('info-title');
@@ -345,12 +367,10 @@
                 cell.addEventListener('click', () => {
                     const num = cell.id.split('-')[1];
                     const data = numerologyData.birthChart[num];
-                    
                     if (data) {
                         infoTitle.textContent = data.title;
                         infoContent.textContent = data.content;
                     }
-
                     birthGridCells.forEach(c => c.classList.remove('active'));
                     cell.classList.add('active');
                 });
@@ -363,14 +383,9 @@
                 dot.addEventListener('click', () => {
                     const year = dot.dataset.year;
                     const data = numerologyData.pinnacles[year];
-                    
                     if(data) {
-                        pinnacleInfoDiv.innerHTML = `
-                            <h3 class="text-xl font-bold text-[#C0A080]">${data.title}</h3>
-                            <p class="mt-2 text-gray-600">${data.content}</p>
-                        `;
+                        pinnacleInfoDiv.innerHTML = `<h3 class="text-xl font-bold text-[#C0A080]">${data.title}</h3><p class="mt-2 text-gray-600">${data.content}</p>`;
                     }
-                    
                     timelineDots.forEach(d => d.classList.remove('active'));
                     dot.classList.add('active');
                 });
@@ -390,7 +405,7 @@
             });
 
             const ctx = document.getElementById('lifePinnaclesChart').getContext('2d');
-            const lifePinnaclesChart = new Chart(ctx, {
+            new Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: ['33 tuổi (2018)', '42 tuổi (2027)', '51 tuổi (2036)', '60 tuổi (2045)'],
@@ -410,47 +425,16 @@
                     }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            ticks: {
-                                color: '#9CA3AF'
-                            },
-                            grid: {
-                                color: '#E5E7EB'
-                            }
-                        },
-                        x: {
-                            ticks: {
-                                color: '#9CA3AF'
-                            },
-                            grid: {
-                                display: false
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            backgroundColor: '#4A4A4A',
-                            titleFont: {
-                                size: 14,
-                                weight: 'bold'
-                            },
-                            bodyFont: {
-                                size: 12
-                            },
-                            padding: 10,
-                            cornerRadius: 8,
-                            displayColors: false,
-                        }
-                    }
+                    responsive: true, maintainAspectRatio: false,
+                    scales: { y: { beginAtZero: true, ticks: { color: '#9CA3AF' }, grid: { color: '#E5E7EB' } }, x: { ticks: { color: '#9CA3AF' }, grid: { display: false } } },
+                    plugins: { legend: { display: false }, tooltip: { backgroundColor: '#4A4A4A', titleFont: { size: 14, weight: 'bold' }, bodyFont: { size: 12 }, padding: 10, cornerRadius: 8, displayColors: false, } }
                 }
             });
+            
+            // Logic to handle single-page app navigation correctly
+            // Hide all sections by default, then show the one from the URL hash or the first one
+            const initialHash = window.location.hash || '#tong-quan';
+            navigateToSection(initialHash);
         });
     </script>
 </body>
